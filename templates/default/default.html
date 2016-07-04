@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <title>Default Scrola Viewer Theme</title>
+    <link rel="stylesheet" type="text/css" href="css/default-style.css">
+    <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="js/default-interaction.js"></script>
+  </head>
+
+  <body onload="generateItemList()">
+
+    <div id="listing-body">
+      <input id="listing-search" type="text" placeholder="search" onkeyup="search(this.value)"></input>
+      <ul id="listing-orders">
+      </ul>
+    </div>
+
+    <!--start-item-body-->
+    <div class="item-body">
+      <!--start-item-title-->
+      <h2 class="item-title" id="#">#</h2>
+      <!--end-item-title-->
+	  <!--start-item-img-->
+      <img class="item-img" src="#" />
+	  <!--end-item-img-->
+    </div>
+    <!--end-item-body-->
+
+  </body>
+
+</html>
