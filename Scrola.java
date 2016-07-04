@@ -119,7 +119,7 @@ public class Scrola {
     htmlWriter.close();
 
     // Launch the browser.
-    String[] process = {browserPath,"%U", "C:/Projects/Project Scrola/scrola/templates/default/scrolaviewer.html"};
+    String[] process = {browserPath, "%U", System.getProperty("user.dir") + "/templates/default/scrolaviewer.html"};
     ProcessBuilder browserLauncher = new ProcessBuilder(process);
     Process scrolaViewerBrowser = browserLauncher.start();
   }
