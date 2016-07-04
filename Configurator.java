@@ -3,7 +3,7 @@
 // Template choice
 // Fullscreen option
 
-package scrola;
+//package scrola;
 
 import java.io.*;
 import java.util.*;

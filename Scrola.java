@@ -4,7 +4,7 @@
 * as the browser launcher. The parameter used by this program is the directory
 * which contains the images file intended to be displayed using Scrola Viewer.
 */
-package scrola;
+//package scrola;
 
 import java.util.*;
 import java.io.*;
@@ -18,7 +18,7 @@ public class Scrola {
     String browserPath = "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"; // "/usr/bin/google-chrome-stable";
     Boolean fullscreen = false;
     String programPath = URLDecoder.decode(Scrola.class.getProtectionDomain().getCodeSource().getLocation().getPath(), "UTF-8");
-    String template = programPath + "scrola/templates/default/default.html";
+    String template = programPath + "templates/default/default.html";
 
     // Read and parse the template chosen in the configuration file.
     String[] Parts = {"","","", "","","", "","","", ""}; // 'Parts' stands for 10 parts of a template.
@@ -85,7 +85,7 @@ public class Scrola {
     // Initialize the variables.
     File folder = new File(directory); // File variable representing the selected folder.
     String[] fileList = folder.list(); // Array to store list of image files.
-    File htmlFile = new File(programPath + "scrola/templates/default/scrolaviewer.html"); // File variable for creating the new generated HTML file.
+    File htmlFile = new File(programPath + "templates/default/scrolaviewer.html"); // File variable for creating the new generated HTML file.
     FileWriter htmlWriter = new FileWriter(htmlFile); // FileWriter Object for the process of writing the HTML file.
 
     // Starts to write the HTML file.
