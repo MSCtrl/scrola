@@ -1,1 +1,1 @@
-java -cp "C:\Projects\Project Scrola\scrola" Scrola %1
+java -cp "C:\Projects\Project Scrola\scrola" Scrola "%1"
