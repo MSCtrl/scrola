@@ -13,17 +13,26 @@ import java.net.*;
 
 public class Scrola {
   public static void main(String[] args) throws IOException {
-    // Read the configation file.
-    // TEMPORARY: configuration file not yet build.
-    String browserPath = "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"; // "/usr/bin/google-chrome-stable";
-    Boolean fullscreen = false;
     String programPath = URLDecoder.decode(Scrola.class.getProtectionDomain().getCodeSource().getLocation().getPath(), "UTF-8");
-    String template = programPath + "templates/default/default.html";
+
+    // Read the configation file.
+    // TEMPORARY: If configuration reader not stable, use below lines to patch-run program.
+    //String browserPath = "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"; // "/usr/bin/google-chrome-stable";
+    //String template = programPath + "templates/default/default.html";
+    Properties scrolaProperties = new Properties();
+    InputStream input = null;
+    String fileName = "config.properties";
+    input = Scrola.class.getClassLoader().getResourceAsStream(fileName);
+    scrolaProperties.load(input);
+
+    // Get the property value
+    String browserPath = scrolaProperties.getProperty("bropath");
+    String templatePath = scrolaProperties.getProperty("tempath");
 
     // Read and parse the template chosen in the configuration file.
     String[] Parts = {"","","", "","","", "","","", ""}; // 'Parts' stands for 10 parts of a template.
 
-    try (BufferedReader br = new BufferedReader(new FileReader(template))) {
+    try (BufferedReader br = new BufferedReader(new FileReader(templatePath))) {
       String line;
       int partIndex = 0; // To determine which index of 'Parts' array String gets to be fulfilled.
       while ((line=br.readLine()) != null) {
